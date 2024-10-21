@@ -26,7 +26,7 @@ const OurProductSection = () => {
             Each product in the Nuova collection is meticulously crafted using the finest ingredients and the latest scientific advancements.
           </p>
           <p className="text-lg text-white mb-4">
-            We offer a wide range of cosmetics, skincare, and fragrances designed to meet the diverse needs of our customers. Whether you're looking for a radiant foundation, a nourishing hair mask, or a captivating fragrance, Nuova has something for everyone.
+            We offer a wide range of cosmetics, skincare, and fragrances designed to meet the diverse needs of our customers. Whether you&apos;re looking for a radiant foundation, a nourishing hair mask, or a captivating fragrance, Nuova has something for everyone.
           </p>
         </div>
 
