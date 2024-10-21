@@ -1,6 +1,6 @@
 import React from "react";
 // components/OurProductSection.js
-import Image from 'next/image';
+import Image from "next/image";
 
 const OurProductSection = () => {
   return (

@@ -1,18 +1,19 @@
 "use client";
 // pages/contact.js
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
 
 export default function ContactUs() {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    isClicked:true
     setIsClicked(true);
-    // Handle form submission logic here
   };
 
   return (
+   
     <div className="min-h-screen flex items-center justify-center bg-[#F8F4EB] py-10">
       <div className="max-w-6xl w-full mx-auto p-6 bg-white shadow-md rounded-lg relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">

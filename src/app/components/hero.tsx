@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 const HeroSection = () => {
   return (
     <section className="flex flex-col text-left bg-green-50 p-8 md:p-16">
