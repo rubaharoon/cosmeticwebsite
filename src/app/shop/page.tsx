@@ -106,9 +106,7 @@ export default function Shop() {
                 </button>
               
             </div>
-            <button className="bg-[#8b5d3e] text-white py-3 rounded-lg shadow-md hover:bg-[#7a4e3a] transition duration-300 mx-auto flex items-center">
-            Shop Now
-                </button>
+           
           </div>
         ))}
       </div>

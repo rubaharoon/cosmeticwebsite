@@ -14,9 +14,9 @@ export default function Home() {
       <HandwashSection />
       <ProductSection />
       <Footer />
-      <Link href="/about">About Us</Link>
-      <Link href="/shop">Shop</Link>
-      <Link href="/contact">Contact Us</Link>
+      <Link href="/about"></Link>
+      <Link href="/shop"></Link>
+      <Link href="/contact"></Link>
     </>
   );
 }

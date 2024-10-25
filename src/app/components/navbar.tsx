@@ -1,28 +1,52 @@
-import React from "react";
-export default function Navbar() {
+"use client";
+import { useState } from 'react';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="flex justify-between items-center p-6 bg-[#FDF9EE] shadow-md">
-        <img src="../images/logo.png" alt="NUOVA Logo" className="h-10" />
-      <nav>
-        <ul className="flex space-x-6">
-          <li><a href="/" className="text-[#000000] hover:text-[#677E53]">HOME</a></li>
-          <li><a href="/shop" className="text-[#000000] hover:text-[#677E53]">SHOP</a></li>
-          <li><a href="/about" className="text-[#000000] hover:text-[#677E53]">ABOUT US</a></li>
-          <li><a href="/contact" className="text-[#000000] hover:text-[#677E53]">CONTACT US</a></li>
-        </ul>
-      </nav>
-      <div className="flex space-x-4">
-        <button>
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/></svg>
-        </button>
-        <button>
-          <a href="/login">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047a9.005 9.005 0 0 1 5.9 8.181a.75.75 0 1 1-1.499.044a7.5 7.5 0 0 0-14.993 0a.75.75 0 0 1-1.5-.045a9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5M8 8a4 4 0 1 0 8 0a4 4 0 0 0-8 0"/></svg>
-      </a>  </button>
-        <button>
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path fill="currentColor" d="M19.5 22a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m-10 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3"/><path d="M5 4h17l-2 11H7zm0 0c-.167-.667-1-2-3-2m18 13H5.23c-1.784 0-2.73.781-2.73 2s.946 2 2.73 2H19.5"/></g></svg>
-        </button>
+    <header className="w-full bg-black text-green-500">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          <div className="text-3xl font-bold">Nuova</div>
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex space-x-8">
+            <a href="/" className="hover:text-gray-300">Home</a>
+            <a href="/about" className="hover:text-gray-300">About</a>
+            <a href="/shop" className="hover:text-gray-300">Shop</a>
+            <a href="/contact" className="hover:text-gray-300">Contact</a>
+          </nav>
+
+          {/* Burger Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button onClick={toggleMenu} className="text-[#67753F] hover:text-gray-300 focus:outline-none">
+              {/* Icon */}
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-black">
+          <nav className="space-y-1 px-2 pt-2 pb-3">
+            <a href="/" className="block text-base text-[#67753F]  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Home</a>
+            <a href="/about" className="block text-base text-[#67753F] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">About</a>
+            <a href="/shop" className="block text-base text-[#67753F] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Shop</a>
+            <a href="/contact" className="block text-base text-[#67753F] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Contact</a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
+
+export default Navbar;
