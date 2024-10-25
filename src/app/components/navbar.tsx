@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 
-const Header = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -78,4 +78,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
